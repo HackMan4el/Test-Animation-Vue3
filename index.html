@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+            <h2>Сокрытие</h2>
+    <div id="demo">
+        <button @click="show = !show">
+          Переключить
+        </button>
+        <transition name="fade">
+          <p v-if="show">привет</p>
+        </transition>
+    
+            <h2>Переключаемые страницы</h2>
+        <div id="app">
+        <transition name="fade" mode="out-in">
+            <div v-if="page === 'index'" key="index">Home</div>
+            <div v-if="page === 'about'" key="about">About</div>
+            <div v-if="page === 'contact'" key="contact">Contact</div>
+        </transition>
+        <button @click="page = 'index'">Home</button>
+        <button @click="page = 'about'">About</button>
+        <button @click="page = 'contact'">Contact</button>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
